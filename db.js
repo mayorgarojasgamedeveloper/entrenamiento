@@ -1,5 +1,5 @@
 var pg = require('pg');
-const client = new pg.Client(process.env.DATABASE_URI);
+const client = new pg.Client(process.env.DATABASE_URL);
 
 const connect = function connect() {
   client.connect(function(err){
