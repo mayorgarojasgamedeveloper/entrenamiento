@@ -1,5 +1,5 @@
 var pg = require('pg');
-const client = new pg.Client(process.env.DATABASE_URL || 'postgresql://postgres:admin@localhost/postgres');
+const client = new pg.Client(process.env.DATABASE_URI);
 
 const connect = function connect() {
   client.connect(function(err){
@@ -10,7 +10,7 @@ const connect = function connect() {
 };
 
 const getStudents = function getStudents(callback) {
-  client.query('SELECT * FROM alumnos', function(err, result) {
+  client.query('SELECT * FROM alumno', function(err, result) {
     if(err) {
       return callback(err);
     }
