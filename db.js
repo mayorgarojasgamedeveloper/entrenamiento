@@ -1,5 +1,5 @@
 var pg = require('pg');
-const client = new pg.Client(process.env.DATABASE_URL);
+const client = new pg.Client(process.env.DATABASE_URL || 'postgresql://postgres:admin@localhost/postgres');
 
 const connect = function connect() {
   client.connect(function(err){
